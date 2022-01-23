@@ -1,15 +1,20 @@
 {
   "resources": [
+    {"id":{"name":"objLifeBar","path":"objects/objLifeBar/objLifeBar.yy",},"order":4,},
     {"id":{"name":"sprController","path":"sprites/sprController/sprController.yy",},"order":0,},
+    {"id":{"name":"sprPlayerDash","path":"sprites/sprPlayerDash/sprPlayerDash.yy",},"order":4,},
     {"id":{"name":"sprPlayer","path":"sprites/sprPlayer/sprPlayer.yy",},"order":2,},
     {"id":{"name":"objGame","path":"objects/objGame/objGame.yy",},"order":2,},
     {"id":{"name":"controllerScript","path":"scripts/controllerScript/controllerScript.yy",},"order":0,},
+    {"id":{"name":"sprEnemyHit","path":"sprites/sprEnemyHit/sprEnemyHit.yy",},"order":5,},
     {"id":{"name":"playerStateMachine","path":"scripts/playerStateMachine/playerStateMachine.yy",},"order":1,},
     {"id":{"name":"objPlayer","path":"objects/objPlayer/objPlayer.yy",},"order":1,},
+    {"id":{"name":"sprPlayerCrouch","path":"sprites/sprPlayerCrouch/sprPlayerCrouch.yy",},"order":3,},
     {"id":{"name":"tsCol","path":"tilesets/tsCol/tsCol.yy",},"order":0,},
     {"id":{"name":"CollisionRoom","path":"rooms/CollisionRoom/CollisionRoom.yy",},"order":1,},
     {"id":{"name":"sprColTileset","path":"sprites/sprColTileset/sprColTileset.yy",},"order":1,},
     {"id":{"name":"objController","path":"objects/objController/objController.yy",},"order":0,},
+    {"id":{"name":"objEnemyHit","path":"objects/objEnemyHit/objEnemyHit.yy",},"order":3,},
     {"id":{"name":"InitRoom","path":"rooms/InitRoom/InitRoom.yy",},"order":0,},
   ],
   "Options": [

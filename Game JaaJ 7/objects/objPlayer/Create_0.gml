@@ -1,7 +1,8 @@
 // Estado
 state = playerStateFree;
-crouch = false;
 onGround = true;
+facing = 1;
+wallGrab = false;
 
 // Variáveis
 // Movimentação Horizontal
@@ -14,5 +15,22 @@ vSpeed = 0;
 maxVSpeed = 5;
 vGravity = 0.2;
 
+// Pulos
 jumps = 2;
-dash = 1;
+
+// Dash
+dashDuration = 0;
+dashMaxDuration = 10;
+dashCooldown = 0;
+
+// Wall grab
+wallGrabSpeed = 1.5;
+wallJumpDelay = 0;
+wallJumpFacing = 0;
+
+// Combate
+maxLife = 100;
+life = 100;
+semiLife = 100;
+
+damage = 20;
