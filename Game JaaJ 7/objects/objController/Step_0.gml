@@ -33,7 +33,7 @@ or gamepad_button_check_pressed(0, gp_padu)
 or gamepad_button_check_pressed(0, gp_face1)
 
 // Golpe
-keyHit = keyboard_check(ord("X"))
+keyHit = keyboard_check_pressed(ord("X"))
 or gamepad_button_check_pressed(0, gp_face3)
 
 // Dash

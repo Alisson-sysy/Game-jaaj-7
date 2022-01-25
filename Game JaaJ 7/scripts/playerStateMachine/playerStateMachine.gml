@@ -8,6 +8,11 @@ function playerStateFree () {
 		onGround = true;
 	 } else onGround = false;
 	 
+	// Atacar
+	if (objController.keyHit) {
+		instance_create_layer(x + (16 * facing), y, "Instances", objPlayerHit);
+	}
+	 
 	// Agachar
 	if (onGround and objController.keyDown) {
 		state = playerStateCrouch;
@@ -26,7 +31,9 @@ function playerStateFree () {
 	
 	// Movimentação
 	moveDirection = objController.keyRight - objController.keyLeft;
-	facing = moveDirection;
+	if (moveDirection != 0) {
+		facing = moveDirection;
+	}
 	
 	// Está andando pra alguma direção
 	hSpeed += hAcceleration * moveDirection

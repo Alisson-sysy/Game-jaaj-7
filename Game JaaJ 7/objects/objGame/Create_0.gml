@@ -1,1 +1,1 @@
-room_goto(CollisionRoom)
+room_goto(warRoom)
