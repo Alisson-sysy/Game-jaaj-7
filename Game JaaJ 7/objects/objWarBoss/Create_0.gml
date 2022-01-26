@@ -15,3 +15,7 @@ maxLife = 500;
 summonArrow = 0;
 warningDelay = 60;
 target = [];
+
+// Spin
+spinDuration = 75;
+spinMaxDuration = 75;
