@@ -9,9 +9,14 @@ state = hermesStateFree;
 eventMoment = 0;
 
 // Parametros
-maxLife = 500;
+totalLife = 3000
+maxLife = 3000;
 
 // Arrow Rain
 summonArrow = 0;
 warningDelay = 60;
 target = [];
+
+// Spin
+spinDuration = 75;
+spinMaxDuration = 75;

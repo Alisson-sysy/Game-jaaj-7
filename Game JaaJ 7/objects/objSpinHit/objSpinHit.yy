@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprPlayerHit",
-    "path": "sprites/sprPlayerHit/sprPlayerHit.yy",
+    "name": "sprHermesSpinHit",
+    "path": "sprites/sprHermesSpinHit/sprHermesSpinHit.yy",
   },
   "solid": false,
   "visible": true,
@@ -27,11 +27,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Bosses",
+    "path": "folders/Objects/Bosses.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objPlayerHit",
+  "name": "objSpinHit",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 19,
-  "bbox_right": 36,
-  "bbox_top": 19,
-  "bbox_bottom": 40,
+  "bbox_left": 5,
+  "bbox_right": 28,
+  "bbox_top": 3,
+  "bbox_bottom": 47,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"60de4768-88e6-4549-8ad2-2cfcd9bdabfa","path":"sprites/sprHermesSpinning/sprHermesSpinning.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"60de4768-88e6-4549-8ad2-2cfcd9bdabfa","path":"sprites/sprHermesSpinning/sprHermesSpinning.yy",},"LayerId":{"name":"46aa071f-86d2-45ed-bd2c-1722cd11d197","path":"sprites/sprHermesSpinning/sprHermesSpinning.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sprHermesSpinning","path":"sprites/sprHermesSpinning/sprHermesSpinning.yy",},"resourceVersion":"1.0","name":"60de4768-88e6-4549-8ad2-2cfcd9bdabfa","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"63a2d227-053b-4376-9621-069c04bebfab","path":"sprites/sprHermesSpinHit/sprHermesSpinHit.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"63a2d227-053b-4376-9621-069c04bebfab","path":"sprites/sprHermesSpinHit/sprHermesSpinHit.yy",},"LayerId":{"name":"46aa071f-86d2-45ed-bd2c-1722cd11d197","path":"sprites/sprHermesSpinHit/sprHermesSpinHit.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sprHermesSpinHit","path":"sprites/sprHermesSpinHit/sprHermesSpinHit.yy",},"resourceVersion":"1.0","name":"63a2d227-053b-4376-9621-069c04bebfab","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sprHermesSpinning","path":"sprites/sprHermesSpinning/sprHermesSpinning.yy",},
+    "spriteId": {"name":"sprHermesSpinHit","path":"sprites/sprHermesSpinHit/sprHermesSpinHit.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 10.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"0a49e429-1320-4341-b164-9e2fdb8f0c43","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"60de4768-88e6-4549-8ad2-2cfcd9bdabfa","path":"sprites/sprHermesSpinning/sprHermesSpinning.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"589f0d4c-c091-45df-ba56-b38ea0965eef","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"63a2d227-053b-4376-9621-069c04bebfab","path":"sprites/sprHermesSpinHit/sprHermesSpinHit.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,9 +58,9 @@
     "yorigin": 31,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sprHermesSpinning","path":"sprites/sprHermesSpinning/sprHermesSpinning.yy",},
+    "parent": {"name":"sprHermesSpinHit","path":"sprites/sprHermesSpinHit/sprHermesSpinHit.yy",},
     "resourceVersion": "1.3",
-    "name": "sprHermesSpinning",
+    "name": "sprHermesSpinHit",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/Bosses/Hermes (War).yy",
   },
   "resourceVersion": "1.0",
-  "name": "sprHermesSpinning",
+  "name": "sprHermesSpinHit",
   "tags": [],
   "resourceType": "GMSprite",
 }

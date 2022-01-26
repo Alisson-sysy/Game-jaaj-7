@@ -103,6 +103,7 @@ function hermesStateSpin() {
 			
 			if (image_index > 20) {
 				eventMoment = 1;
+				instance_create_layer(x, y, "Particles", objSpinHit);
 			}
 			break;
 		
@@ -111,6 +112,20 @@ function hermesStateSpin() {
 			image_index = 0;
 			sprite_index = sprHermesSpinning;
 			image_angle += 57;
+			if (spinDuration < 1) {
+				eventMoment = 2;
+			}
+			spinDuration = max(spinDuration - 1, 0);
+			break;
+		case 2:
+			image_angle = 0;
+			instance_destroy(objSpinHit);
+			sprite_index = sprHermesIdle;
+			image_index = 0;
+			spinDuration = spinMaxDuration;
+			state = hermesStateFree;
+			eventMoment = 0;
+			break;
 	}
 }
 
