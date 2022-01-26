@@ -1,4 +1,5 @@
-var startx = 2;
-draw_set_color(c_green)
-draw_rectangle(startx, 60, startx + objPlayer.life, 65, false);
-draw_set_color(c_white);
+draw_set_color ( colorSlowLife );
+slowLifeRectanglee = draw_rectangle ( 100 , 660 , slowLife , 680 , false );
+
+draw_set_color ( colorLife );
+lifeRectangle = draw_rectangle ( 100 , 660 , fastLife , 680 , false)  
