@@ -8,6 +8,9 @@ objEnemyHitbox.image_yscale = 6;
 state = hermesStateFree;
 eventMoment = 0;
 
+// Parametros
+maxLife = 500;
+
 // Arrow Rain
 summonArrow = 0;
 warningDelay = 60;
