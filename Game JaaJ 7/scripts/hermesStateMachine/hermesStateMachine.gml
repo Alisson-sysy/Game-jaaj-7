@@ -95,6 +95,25 @@ function hermesStateArrowRain() {
 	 
 }
 
+function hermesStateSpin() {
+	switch (eventMoment) {
+		case 0:
+			image_speed = 1;
+			sprite_index = sprHermesSpinStart;
+			
+			if (image_index > 20) {
+				eventMoment = 1;
+			}
+			break;
+		
+		case 1:
+			image_speed = 0;
+			image_index = 0;
+			sprite_index = sprHermesSpinning;
+			image_angle += 57;
+	}
+}
+
 function arrowRainQuadrant() {
 	var dist = 999;
 	var q = 0;
