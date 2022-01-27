@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprEnemyHitbox",
-    "path": "sprites/sprEnemyHitbox/sprEnemyHitbox.yy",
+    "name": "sprHermesSword",
+    "path": "sprites/sprHermesSword/sprHermesSword.yy",
   },
   "solid": false,
   "visible": true,
@@ -27,11 +27,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Bosses",
+    "path": "folders/Objects/Bosses.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objEnemyHitbox",
+  "name": "objHermesSword",
   "tags": [],
   "resourceType": "GMObject",
 }

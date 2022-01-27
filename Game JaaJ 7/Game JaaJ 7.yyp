@@ -1,8 +1,11 @@
 {
   "resources": [
     {"id":{"name":"objLifeBar","path":"objects/objLifeBar/objLifeBar.yy",},"order":4,},
+    {"id":{"name":"objHermesSword","path":"objects/objHermesSword/objHermesSword.yy",},"order":7,},
+    {"id":{"name":"sprBumpShock","path":"sprites/sprBumpShock/sprBumpShock.yy",},"order":15,},
     {"id":{"name":"objEnemyHitbox","path":"objects/objEnemyHitbox/objEnemyHitbox.yy",},"order":5,},
     {"id":{"name":"sprController","path":"sprites/sprController/sprController.yy",},"order":0,},
+    {"id":{"name":"sprHermesSword","path":"sprites/sprHermesSword/sprHermesSword.yy",},"order":13,},
     {"id":{"name":"sprPlayerDash","path":"sprites/sprPlayerDash/sprPlayerDash.yy",},"order":4,},
     {"id":{"name":"objArrowRainDown","path":"objects/objArrowRainDown/objArrowRainDown.yy",},"order":2,},
     {"id":{"name":"sprWarningArrowHead","path":"sprites/sprWarningArrowHead/sprWarningArrowHead.yy",},"order":6,},
@@ -17,6 +20,7 @@
     {"id":{"name":"sprEnemyHitbox","path":"sprites/sprEnemyHitbox/sprEnemyHitbox.yy",},"order":6,},
     {"id":{"name":"objPlayer","path":"objects/objPlayer/objPlayer.yy",},"order":1,},
     {"id":{"name":"sprHermesSpinHit","path":"sprites/sprHermesSpinHit/sprHermesSpinHit.yy",},"order":10,},
+    {"id":{"name":"objBumpShock","path":"objects/objBumpShock/objBumpShock.yy",},"order":8,},
     {"id":{"name":"objBossLifeBar","path":"objects/objBossLifeBar/objBossLifeBar.yy",},"order":6,},
     {"id":{"name":"sprPlayerCrouch","path":"sprites/sprPlayerCrouch/sprPlayerCrouch.yy",},"order":3,},
     {"id":{"name":"hermesStateMachine","path":"scripts/hermesStateMachine/hermesStateMachine.yy",},"order":2,},
@@ -42,6 +46,8 @@
     {"id":{"name":"sprPlayerHit","path":"sprites/sprPlayerHit/sprPlayerHit.yy",},"order":7,},
     {"id":{"name":"sprWarningArrow","path":"sprites/sprWarningArrow/sprWarningArrow.yy",},"order":5,},
     {"id":{"name":"objSpinHit","path":"objects/objSpinHit/objSpinHit.yy",},"order":6,},
+    {"id":{"name":"sprHermesThrow","path":"sprites/sprHermesThrow/sprHermesThrow.yy",},"order":12,},
+    {"id":{"name":"sprHermesBump","path":"sprites/sprHermesBump/sprHermesBump.yy",},"order":14,},
     {"id":{"name":"arrayFunctions","path":"scripts/arrayFunctions/arrayFunctions.yy",},"order":4,},
     {"id":{"name":"objPlayerHit","path":"objects/objPlayerHit/objPlayerHit.yy",},"order":7,},
     {"id":{"name":"objArrowRainUp","path":"objects/objArrowRainUp/objArrowRainUp.yy",},"order":1,},

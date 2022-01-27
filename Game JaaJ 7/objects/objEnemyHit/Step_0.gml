@@ -3,8 +3,10 @@ image_xscale = xs;
 image_yscale = ys;
 
 // Seguir objeto
-x = follow.x;
-y = follow.y;
+if (follow != noone) {
+	x = follow.x;
+	y = follow.y;
+}
 
 // Destruir na parede
 if (destroyOnWall) {
@@ -14,8 +16,8 @@ if (destroyOnWall) {
 }
 
 // Destruir com tempo
+if (destroyTime < 990) destroyTime = max(destroyTime - 1, 0);
 if (destroyTime < 1) instance_destroy(self);
-destroyTime = max(destroyTime - 1, 0);
 
 // Dar dano no player
 if (place_meeting(x, y, objPlayer)) {

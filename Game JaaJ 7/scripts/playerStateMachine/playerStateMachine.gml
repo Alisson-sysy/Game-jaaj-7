@@ -178,3 +178,14 @@ function applyCollision() {
 		wallGrab = false;
 	}
 }
+
+function HitDano(){
+	hitRandom = irandom_range(100, 300)
+	objWarBoss.maxLife -= hitRandom
+	percentageHitBoss = (hitRandom * 100) / objWarBoss.totalLife
+	percentegeLifebar = (objLifeBar.fullLife * percentageHitBoss) / 100
+	objLifeBar.fastLife -= percentegeLifebar
+	if(objLifeBar.fastLife <= 100){
+		objLifeBar.colorLife = false
+	}
+}

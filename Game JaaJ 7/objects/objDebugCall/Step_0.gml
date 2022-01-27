@@ -4,7 +4,7 @@ if (keyboard_check_pressed(ord("1"))) {
 }
 
 if (keyboard_check_pressed(ord("2"))) {
-	show_message(arrowRainQuadrant());
+	objWarBoss.state = hermesStateBump;
 }
 
 if (keyboard_check_pressed(ord("3"))) {
