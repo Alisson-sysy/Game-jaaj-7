@@ -104,6 +104,12 @@ function hermesStateSpin() {
 			if (image_index > 20) {
 				eventMoment = 1;
 				instance_create_layer(x, y, "Particles", objSpinHit);
+				with (instance_create_layer(x, y, "Hitboxes", objEnemyHit)) {
+					self.follow = noone;
+					self.xs = 9;
+					self.ys = 9;
+					self.destroyTime = 75;
+				}
 			}
 			break;
 		
@@ -128,6 +134,108 @@ function hermesStateSpin() {
 			break;
 	}
 }
+
+function hermesStateBump() {
+	switch (eventMoment) {
+		case 0:
+			image_speed = 1;
+			sprite_index = sprHermesThrow;
+			if (image_index > 18) {
+				instance_create_layer(x, y, "Front", objHermesSword);
+				eventMoment = 1;
+			}
+			break;
+		
+		case 1:
+			image_speed = 0;
+			if (jumpDelay < 1) {
+				eventMoment = 2;
+			}
+			jumpDelay = max(jumpDelay - 1, 0);
+			break;
+		case 2:
+			image_speed = 0;
+			image_index = 0;
+			sprite_index = sprHermesSpinning;
+			image_angle += 22;
+			x += (objHermesSword.x - x)/10;
+			y += (objHermesSword.y - y)/10;
+			if (objHermesSword.x div 1 == x div 1 and objHermesSword.y div 1 == y div 1) {
+				eventMoment = 3;
+				instance_destroy(objHermesSword);
+				image_angle = 0;
+			}
+			break;
+		case 3:
+			image_speed = 1;
+			if (image_index > 2) image_index = 3;
+			sprite_index = sprHermesBump;
+			dropSpeed += 0.8;
+			y += dropSpeed;
+			if (y > objLevel.groundY) {
+				image_speed = 0;
+				ScreenShake(10, 10);
+				image_index = 4;
+				y = objLevel.groundY - 41;
+				eventMoment = 4;
+				instance_create_layer(x + 24, y + sprite_height/5, "Front", objBumpShock);
+				with (instance_create_layer(x - 24, y + sprite_height/5, "Front", objBumpShock)) {
+					facing = -1;
+				};
+			}
+			break;
+		case 4:
+			if (not instance_exists(objBumpShock)) {
+				eventMoment = 5;
+			}
+			break;
+		case 5:
+			jumpDelay = 20;
+			eventMoment = 0;
+			state = hermesStateRepos;
+			break;
+	}
+}
+
+function hermesStateRepos() {
+	switch (eventMoment) {
+		case 0:
+			image_speed = 0;
+			image_index = 0;
+			sprite_index = sprHermesSpinning;
+			image_angle += 22;
+			
+			if (objPlayer.x < 336) {
+				xTarget = 550;
+				yTarget = 120;
+			} else {
+				xTarget = 122;
+				yTarget = 120;
+			}
+	
+			x += (xTarget - x)/6;
+			y += (yTarget - y)/3;
+			
+			if (abs(x - xTarget) < 1) {
+				eventMoment = 1;
+				yTarget = 245;
+			}
+			break;
+		case 1:
+			image_angle = 0;
+			sprite_index = sprHermesBump;
+			image_index = 3;
+			y += (yTarget - y)/3;
+			if (abs(y - yTarget) < 1) {
+				sprite_index = sprHermesIdle;
+				image_index = 0;
+				eventMoment = 0;
+				state = hermesStateFree;
+			}
+			break;
+	}
+}
+
 
 function arrowRainQuadrant() {
 	var dist = 999;
