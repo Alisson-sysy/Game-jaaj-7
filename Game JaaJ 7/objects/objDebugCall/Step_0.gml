@@ -10,3 +10,7 @@ if (keyboard_check_pressed(ord("2"))) {
 if (keyboard_check_pressed(ord("3"))) {
 	objWarBoss.state = hermesStateSpin;
 }
+
+if (keyboard_check_pressed(ord("4"))) {
+	objWarBoss.state = hermesStateHorDash;
+}

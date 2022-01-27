@@ -197,6 +197,54 @@ function hermesStateBump() {
 	}
 }
 
+function hermesStateHorDash() {
+	switch (eventMoment) {
+		case 0:
+			image_speed = 1;
+			sprite_index = sprHermesPoint;
+			if (image_index > 7) {
+				image_speed = 0;
+				eventMoment = 1;
+			}
+			break;
+		case 1:
+			image_speed = 0;
+			if (pointDelay < 1) {
+				eventMoment = 2;
+				image_speed = 1;
+				sprite_index = sprHermesHDash;
+				image_index = 0;
+			}
+			pointDelay = max(pointDelay - 1, 0);
+			break;
+		case 2:
+			if (image_index > 10) {
+				eventMoment = 3;
+			}
+			break;
+		case 3:
+			if (image_index > 12) {
+				image_index = 12;
+				image_speed = 0;
+			}
+			x -= 25;
+			if (x < 60) {
+				eventMoment = 4;
+				ScreenShake(10, 10);
+				sprite_index = sprHermesStun;
+				image_speed = 1;
+				image_index = 0;
+				x = 80;
+			}
+			break;
+		case 4:
+			if (image_index > 32) {
+				state = hermesStateRepos;
+			}
+			break;
+	}
+}
+
 function hermesStateRepos() {
 	switch (eventMoment) {
 		case 0:

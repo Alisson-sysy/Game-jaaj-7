@@ -43,5 +43,8 @@ spinMaxDuration = 75;
 jumpDelay = 20;
 dropSpeed = 0;
 
+// Dash
+pointDelay = 90;
+
 // Repos
 xTarget = 0;
