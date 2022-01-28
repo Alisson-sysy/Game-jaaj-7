@@ -90,6 +90,7 @@ function hermesStateArrowRain() {
 		case 4:
 			eventMoment = 0;
 			state = hermesStateFree;
+			facingUpdate();
 			break;
 	}
 	 
@@ -131,6 +132,7 @@ function hermesStateSpin() {
 			spinDuration = spinMaxDuration;
 			state = hermesStateFree;
 			eventMoment = 0;
+			facingUpdate();
 			break;
 	}
 }
@@ -220,6 +222,11 @@ function hermesStateHorDash() {
 		case 2:
 			if (image_index > 10) {
 				eventMoment = 3;
+				if (x < 336) {
+					xTarget = 612;
+				} else {
+					xTarget = 60;
+				}
 			}
 			break;
 		case 3:
@@ -227,18 +234,20 @@ function hermesStateHorDash() {
 				image_index = 12;
 				image_speed = 0;
 			}
-			x -= 25;
-			if (x < 60) {
+			x += 25 * sign(xTarget - x);
+			if (x < 60 or x > 612) {
 				eventMoment = 4;
 				ScreenShake(10, 10);
 				sprite_index = sprHermesStun;
 				image_speed = 1;
 				image_index = 0;
-				x = 80;
+				x = xTarget;
 			}
 			break;
 		case 4:
-			if (image_index > 32) {
+			if (image_index > 67) {
+				pointDelay = 90;
+				eventMoment = 0;
 				state = hermesStateRepos;
 			}
 			break;
@@ -265,6 +274,7 @@ function hermesStateRepos() {
 			y += (yTarget - y)/3;
 			
 			if (abs(x - xTarget) < 1) {
+				facingUpdate();
 				eventMoment = 1;
 				yTarget = 245;
 			}
@@ -298,4 +308,12 @@ function arrowRainQuadrant() {
 	}
 	
 	return q;
+}
+
+function facingUpdate() {
+	if (x < 335) {
+		image_xscale = -3;
+	} else {
+		image_xscale = 3;
+	}
 }
