@@ -195,6 +195,13 @@ function hermesStateBump() {
 			jumpDelay = 20;
 			eventMoment = 0;
 			state = hermesStateRepos;
+			if (objPlayer.x < 336) {
+				xTarget = 550;
+				yTarget = 120;
+			} else {
+				xTarget = 122;
+				yTarget = 120;
+			}
 			break;
 	}
 }
@@ -249,6 +256,13 @@ function hermesStateHorDash() {
 				pointDelay = 90;
 				eventMoment = 0;
 				state = hermesStateRepos;
+				if (objPlayer.x < 336) {
+					xTarget = 550;
+					yTarget = 120;
+				} else {
+					xTarget = 122;
+					yTarget = 120;
+				}
 			}
 			break;
 	}
@@ -261,14 +275,6 @@ function hermesStateRepos() {
 			image_index = 0;
 			sprite_index = sprHermesSpinning;
 			image_angle += 22;
-			
-			if (objPlayer.x < 336) {
-				xTarget = 550;
-				yTarget = 120;
-			} else {
-				xTarget = 122;
-				yTarget = 120;
-			}
 	
 			x += (xTarget - x)/6;
 			y += (yTarget - y)/3;
