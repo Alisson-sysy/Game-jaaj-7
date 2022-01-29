@@ -15,3 +15,4 @@ bbgHeight = 0;
 subQt = 0;
 
 // Clarão
+whiteOpacity = 0;

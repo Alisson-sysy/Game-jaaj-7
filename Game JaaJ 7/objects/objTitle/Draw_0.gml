@@ -13,6 +13,8 @@ if (active) {
 				eventMoment++;
 				startTitle = timer;
 			}
+			
+			draw_set_alpha(1);
 			break;
 		case 1:
 			draw_set_alpha(.7);
@@ -97,6 +99,9 @@ if (active) {
 				}
 				
 				if (objLifeBar.lifeGrow > 261) {
+					lifeGrow = 57;
+					whiteOpacity = 1;
+					showLife = true;
 					eventMoment++;
 				}
 			}
@@ -105,7 +110,18 @@ if (active) {
 			break;
 			
 		case 3:
+			draw_set_alpha(whiteOpacity);
+			draw_set_color(c_white);
+			draw_rectangle(0, 0, 800, 800, false);
 			
+			whiteOpacity = max(whiteOpacity - 0.05, 0);
+			
+			draw_set_alpha(1);
+			
+			draw_set_font(fonMiddle);
+			draw_set_color(c_white);
+			draw_set_halign(fa_center);
+			draw_text(339, 360, "Hermes");
 			break;
 	}
 }

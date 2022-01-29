@@ -18,4 +18,4 @@ sdetailTargetY = 400;
 
 showLife = false;
 
-lifeGrow = 58;
+lifeGrow = 57;

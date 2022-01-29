@@ -7,10 +7,14 @@ draw_set_color(colorLifeBg);
 draw_rectangle(58, barY - 7.3, 262, barY - 1.3, false);
 
 // Lifebar Fake
-draw_set_color(objLifeBar.colorLife);
-draw_rectangle(58, 157, objLifeBar.lifeGrow, 164, false);
+if (lifeGrow > 58 and objTitle.eventMoment < 3) {
+	draw_set_color(colorLife);
+	draw_rectangle(58, 157, objLifeBar.lifeGrow, 164, false);
+}
 
-if (showLife) {
+if (objTitle.eventMoment > 2) {
+	draw_set_alpha(1);
+	
 	draw_set_color(colorSlowLife);
 	draw_rectangle(58, 157, slowLife, 164, false);
 
