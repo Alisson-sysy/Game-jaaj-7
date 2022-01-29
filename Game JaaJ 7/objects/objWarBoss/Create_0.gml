@@ -27,8 +27,8 @@ state = hermesStateFree;
 eventMoment = 0;
 
 // Parametros
-totalLife = 3000
-maxLife = 3000;
+totalLife = 5000;
+maxLife = 5000;
 
 // Arrow Rain
 summonArrow = 0;
@@ -42,6 +42,9 @@ spinMaxDuration = 75;
 // Bump
 jumpDelay = 20;
 dropSpeed = 0;
+
+// Dash
+pointDelay = 90;
 
 // Repos
 xTarget = 0;
