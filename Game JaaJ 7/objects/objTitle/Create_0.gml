@@ -13,3 +13,5 @@ bbgHeight = 0;
 
 // Subtitle
 subQt = 0;
+
+// Clarão

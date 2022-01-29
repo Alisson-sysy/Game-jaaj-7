@@ -21,6 +21,7 @@ if (active) {
 			draw_rectangle(0, 392/2 + bbgHeight - 40, 672, 392/2 - bbgHeight - 40, false);
 			bbgHeight = min(bbgHeight + 1, 20);
 			
+			draw_set_alpha(1);
 			draw_set_halign(fa_left);
 			draw_set_valign(fa_center);
 			draw_set_font(fonDungeon);
@@ -54,6 +55,8 @@ if (active) {
 			draw_rectangle(0, 392/2 + bbgHeight - 40, 672, 392/2 - bbgHeight - 40, false);
 			bbgHeight = min(bbgHeight + 1, 20);
 			
+			draw_set_alpha(1);
+			
 			draw_set_halign(fa_left);
 			draw_set_valign(fa_center);
 			draw_set_font(fonDungeon);
@@ -83,6 +86,26 @@ if (active) {
 			var subt = string_copy(subtitle, 0, subQt);
 			if (timer % 5 == 0) subQt = min(subQt + 1, string_length(subtitle));
 			draw_text(672/2, 190, subt);
+			
+			if (startTitle + 250 < timer) {
+				objLifeBar.barTargetY = 165;
+				objLifeBar.detailTargetY = 165;
+				objLifeBar.sdetailTargetY = 165;
+				
+				if (abs(objLifeBar.sdetailTargetY - objLifeBar.sdetailY) < 1) {
+					objLifeBar.lifeGrow++;
+				}
+				
+				if (objLifeBar.lifeGrow > 261) {
+					eventMoment++;
+				}
+			}
+			
+			
+			break;
+			
+		case 3:
+			
 			break;
 	}
 }
