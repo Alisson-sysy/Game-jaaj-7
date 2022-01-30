@@ -1,0 +1,1 @@
+wasOnGround = objPlayer.onGround;
