@@ -1,1 +1,3 @@
-wasOnGround = objPlayer.onGround;
+if (objGame.gameState == "g") {
+	wasOnGround = objPlayer.onGround;
+}

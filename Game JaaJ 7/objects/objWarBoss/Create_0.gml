@@ -10,6 +10,7 @@ with (instance_create_layer(x, y + 10, "Hitboxes", objEnemyHitbox)) {
 }
 
 with (instance_create_layer(x, y + 10, "Hitboxes", objEnemyHit)) {
+	damage = 10;
 	follow = other;
 	isPersistent = true;
 	destroyOnWall = false;
@@ -48,3 +49,12 @@ pointDelay = 90;
 
 // Repos
 xTarget = 0;
+
+// Inteligencia
+choiceCooldown = 120;
+ccMax = 90;
+ccMin = 45;
+
+previousHit = hermesStateVerDash;
+
+isHit = false;

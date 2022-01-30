@@ -11,7 +11,10 @@
 	// Atacar
 	if (objController.keyHit) {
 		soundRandom = irandom_range(0,2)
-		instance_create_layer(x + (16 * facing), y, "Instances", objPlayerHit);
+		with (instance_create_layer(x + (30 * facing), y - 5, "Hitboxes", objPlayerHit)) {
+			xs = 2;
+			ys = 3;
+		}
 		audio_sound_pitch(objSounds.swordSound[soundRandom], 20)
 		audio_play_sound(objSounds.swordSound[soundRandom], 10, false)
 		audio_sound_pitch(objSounds.swordSound[soundRandom], 1)
@@ -126,6 +129,7 @@ function playerStateDash() {
 }
 
 function playerStateDamage() {
+	ScreenShake(5, 5);
 	vSpeed = 0;
 	hSpeed = -facing * 1;
 	
@@ -142,8 +146,15 @@ function playerStateDamage() {
 }
 
 function playerStateHit() {
-	vSpeed = 0;
-	hSpeed = facing * 0.4;
+	if (onGround) {
+		vSpeed = 0;
+	} else {
+		vSpeed += 0.1;
+	}
+	
+	vSpeed = min(1, vSpeed);
+	
+	hSpeed = facing * 0.1;
 	
 	switch (hitStage) {
 		case 0:
@@ -158,6 +169,10 @@ function playerStateHit() {
 			if (hitWait > 1 and hitWait < 15 and objController.keyHit) {
 				hitStage++;
 				hitWait = hitWaitMax;
+				with (instance_create_layer(x + (32 * facing), y - 5, "Hitboxes", objPlayerHit)) {
+					xs = 2.5;
+					ys = 3;
+				}
 			}
 			break;
 			
@@ -173,6 +188,10 @@ function playerStateHit() {
 			if (hitWait > 1 and hitWait < 15 and objController.keyHit) {
 				hitStage++;
 				hitWait = hitWaitMax;
+				with (instance_create_layer(x + (32 * facing), y - 10, "Hitboxes", objPlayerHit)) {
+					xs = 3.2;
+					ys = 3.4;
+				}
 			}
 			break;
 		case 2:
@@ -185,6 +204,8 @@ function playerStateHit() {
 			}
 			break;
 	}
+	
+	applyCollision();
 	
 	x += hSpeed;
 	y += vSpeed;
@@ -250,7 +271,7 @@ function applyCollision() {
 }
 
 function HitDano(){
-	hitRandom = irandom_range(100, 300)
+	hitRandom = irandom_range(40, 60) + random_range(5, 10) * objPlayer.hitStage;
 	objWarBoss.maxLife -= hitRandom
 	percentageHitBoss = (hitRandom * 100) / objWarBoss.totalLife
 	percentegeLifebar = (objLifeBar.fullLife * percentageHitBoss) / 100

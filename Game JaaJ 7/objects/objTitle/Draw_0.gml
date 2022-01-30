@@ -122,6 +122,8 @@ if (active) {
 			draw_set_color(c_white);
 			draw_set_halign(fa_center);
 			draw_text(339, 360, "Hermes");
+			
+			objGame.gameState = "g";
 			break;
 	}
 }

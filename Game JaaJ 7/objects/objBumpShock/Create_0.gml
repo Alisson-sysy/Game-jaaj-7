@@ -7,6 +7,7 @@ with (instance_create_layer(x, y, "Hitboxes", objEnemyHit)) {
 	follow = other;
 	xs = 1;
 	ys = 2;
+	damage = 20;
 	destroyOnWall = false;
 	destroyTime = 180;
 	other.hitbox = self;

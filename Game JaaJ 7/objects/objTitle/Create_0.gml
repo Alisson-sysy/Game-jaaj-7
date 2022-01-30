@@ -1,5 +1,5 @@
 eventMoment = 0;
-active = 0;
+active = true;
 
 // Textos
 name = "HERMES";

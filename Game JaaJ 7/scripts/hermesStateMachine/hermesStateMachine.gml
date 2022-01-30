@@ -1,7 +1,30 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function hermesStateFree() {
-
+	if (choiceCooldown < 1) {
+		// Arrow rain de cria
+		if (irandom_range(0, 100) < 20 and previousHit != hermesStateArrowRain) {
+			state = hermesStateArrowRain;
+		// Girar
+		} else if (distance()[0] < 90 and distance()[1] < 80 and previousHit != hermesStateSpin) {
+			state = hermesStateSpin;
+		// Vert Dash
+		} else if (distance()[0] < 50 and previousHit != hermesStateVerDash) {
+			state = hermesStateVerDash;
+		// Hor Dash + Bump
+		} else if (objPlayer.y > 0) {
+			var nstate = choose(hermesStateBump, hermesStateHorDash);
+			while (nstate == previousHit) {
+				nstate = choose(hermesStateBump, hermesStateHorDash);
+			}
+			state = nstate;
+		// Se não, chuve de flecha dnv
+		} else {
+			state = hermesStateArrowRain;
+		}
+		
+		
+		
+		
+	} else choiceCooldown = max(0, choiceCooldown - 1);
 }
 
 function hermesStateArrowRain() {
@@ -89,6 +112,8 @@ function hermesStateArrowRain() {
 			break;
 		case 4:
 			eventMoment = 0;
+			objWarBoss.choiceCooldown = newCooldown();
+			previousHit = hermesStateArrowRain;
 			state = hermesStateFree;
 			facingUpdate();
 			break;
@@ -106,9 +131,10 @@ function hermesStateSpin() {
 				eventMoment = 1;
 				instance_create_layer(x, y, "Particles", objSpinHit);
 				with (instance_create_layer(x, y, "Hitboxes", objEnemyHit)) {
+					damage = 30;
 					self.follow = noone;
-					self.xs = 9;
-					self.ys = 9;
+					self.xs = 11;
+					self.ys = 10;
 					self.destroyTime = 75;
 				}
 			}
@@ -132,6 +158,8 @@ function hermesStateSpin() {
 			spinDuration = spinMaxDuration;
 			state = hermesStateFree;
 			eventMoment = 0;
+			objWarBoss.choiceCooldown = newCooldown();
+			previousHit = hermesStateSpin;
 			facingUpdate();
 			break;
 	}
@@ -166,6 +194,13 @@ function hermesStateBump() {
 				eventMoment = 3;
 				instance_destroy(objHermesSword);
 				image_angle = 0;
+				with (instance_create_layer(x, y, "Hitboxes", objEnemyHit)) {
+					damage = 30;
+					self.follow = objWarBoss;
+					self.xs = 5;
+					self.ys = 7;
+					self.destroyTime = 40;
+				}
 			}
 			break;
 		case 3:
@@ -193,6 +228,8 @@ function hermesStateBump() {
 			break;
 		case 5:
 			jumpDelay = 20;
+			objWarBoss.choiceCooldown = newCooldown();
+			previousHit = hermesStateBump;
 			eventMoment = 0;
 			state = hermesStateRepos;
 			if (objPlayer.x < 336) {
@@ -223,6 +260,14 @@ function hermesStateHorDash() {
 				image_speed = 1;
 				sprite_index = sprHermesHDash;
 				image_index = 0;
+				with (instance_create_layer(x, y, "Hitboxes", objEnemyHit)) {
+					damage = 20;
+					self.follow = objWarBoss;
+					self.xs = 7;
+					self.ys = 6;
+					self.destroyTime = 75;
+					self.destroyOnWall = true;
+				}
 			}
 			pointDelay = max(pointDelay - 1, 0);
 			break;
@@ -254,6 +299,8 @@ function hermesStateHorDash() {
 		case 4:
 			if (image_index > 67) {
 				pointDelay = 90;
+				objWarBoss.choiceCooldown = newCooldown();
+				previousHit = hermesStateHorDash;
 				eventMoment = 0;
 				state = hermesStateRepos;
 				if (objPlayer.x < 336) {
@@ -285,6 +332,14 @@ function hermesStateVerDash() {
 				image_speed = 1;
 				sprite_index = sprHermesVDash;
 				image_index = 0;
+				with (instance_create_layer(x, y, "Hitboxes", objEnemyHit)) {
+					damage = 20;
+					self.follow = objWarBoss;
+					self.xs = 5;
+					self.ys = 11;
+					self.destroyTime = 75;
+					self.destroyOnWall = true;
+				}
 			}
 			pointDelay = max(pointDelay - 1, 0);
 			break;
@@ -310,8 +365,19 @@ function hermesStateVerDash() {
 			}
 			break;
 		case 4:
+			yTarget = 245;
+			y += 7;
+			if (y > yTarget) {
+				y = yTarget;
+				eventMoment++;
+			}
+			
+			break;
+		case 5:
 			if (image_index > 67) {
 				pointDelay = 90;
+				objWarBoss.choiceCooldown = newCooldown();
+				previousHit = hermesStateVerDash;
 				eventMoment = 0;
 				state = hermesStateRepos;
 				if (objPlayer.x < 336) {
@@ -380,4 +446,13 @@ function facingUpdate() {
 	} else {
 		image_xscale = 3;
 	}
+}
+
+function distance() {
+	return [abs(objPlayer.x - objWarBoss.x), abs(objPlayer.y - objWarBoss.y)];
+}
+
+function newCooldown() {
+	var percent = objLifeBar.fastLife/objLifeBar.fullLife;
+	return objWarBoss.ccMin + ((objWarBoss.ccMax - objWarBoss.ccMin) * percent);
 }

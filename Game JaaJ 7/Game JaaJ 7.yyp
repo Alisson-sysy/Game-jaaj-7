@@ -32,6 +32,7 @@
     {"id":{"name":"objArrowWarning","path":"objects/objArrowWarning/objArrowWarning.yy",},"order":5,},
     {"id":{"name":"playerStateMachine","path":"scripts/playerStateMachine/playerStateMachine.yy",},"order":1,},
     {"id":{"name":"sprEnemyHitbox","path":"sprites/sprEnemyHitbox/sprEnemyHitbox.yy",},"order":6,},
+    {"id":{"name":"shWhite","path":"shaders/shWhite/shWhite.yy",},"order":0,},
     {"id":{"name":"sprPlayerFall","path":"sprites/sprPlayerFall/sprPlayerFall.yy",},"order":4,},
     {"id":{"name":"sprStarStunOverhead","path":"sprites/sprStarStunOverhead/sprStarStunOverhead.yy",},"order":17,},
     {"id":{"name":"sprPlayerJumpMid","path":"sprites/sprPlayerJumpMid/sprPlayerJumpMid.yy",},"order":5,},

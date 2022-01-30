@@ -4,6 +4,9 @@ onGround = true;
 facing = 1;
 wallGrab = false;
 
+// Hitbox
+image_yscale = 1.5;
+
 // Variáveis
 // Movimentação Horizontal
 hSpeed = 0;
