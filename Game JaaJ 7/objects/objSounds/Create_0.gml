@@ -1,0 +1,1 @@
+swordSound = [sndSwordSoundOne, sndSwordSoundTwo, sndSwordSoundThree]
