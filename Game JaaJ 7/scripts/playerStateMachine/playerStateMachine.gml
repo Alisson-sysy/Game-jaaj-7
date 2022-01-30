@@ -1,4 +1,4 @@
-function playerStateFree () {
+ function playerStateFree () {
 	var tilemap = layer_tilemap_get_id(layer_get_id("Collision"));
 
 	// Medidas de controle
@@ -10,7 +10,11 @@ function playerStateFree () {
 	 
 	// Atacar
 	if (objController.keyHit) {
+		soundRandom = irandom_range(0,2)
 		instance_create_layer(x + (16 * facing), y, "Instances", objPlayerHit);
+		audio_sound_pitch(objSounds.swordSound[soundRandom], 20)
+		audio_play_sound(objSounds.swordSound[soundRandom], 10, false)
+		audio_sound_pitch(objSounds.swordSound[soundRandom], 1)
 	}
 	 
 	// Agachar
