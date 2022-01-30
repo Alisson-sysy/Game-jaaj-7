@@ -1,0 +1,1 @@
+fastLife -= 15
