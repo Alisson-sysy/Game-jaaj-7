@@ -20,9 +20,10 @@ if (destroyTime < 990) destroyTime = max(destroyTime - 1, 0);
 if (destroyTime < 1) instance_destroy(self);
 
 // Dar dano no player
-if (place_meeting(x, y, objPlayer)) {
+if (place_meeting(x, y, objPlayer) and objPlayer.invulnerability < 1) {
 	objPlayer.life -= 20;
 	objPlayer.state = playerStateDamage;
+	objPlayer.invulnerability = 90;
 	if (not isPersistent) {
 		instance_destroy(self);
 	}

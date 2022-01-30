@@ -29,20 +29,20 @@ if (objPlayer.state == playerStateFree and objPlayer.hSpeed == 0) {
 }
 
 // Pulo
-if (not objPlayer.onGround and objPlayer.vSpeed < 0) {
+if (not objPlayer.onGround and objPlayer.vSpeed < 0 and objPlayer.state == playerStateFree) {
 	sprite_index = sprPlayerJump;
 }
 
-if (not objPlayer.onGround and objPlayer.vSpeed > 0) {
+if (not objPlayer.onGround and objPlayer.vSpeed > 0 and objPlayer.state == playerStateFree) {
 	sprite_index = sprPlayerFall;
 }
 
-if (not objPlayer.onGround and objPlayer.vSpeed < 0.6 and objPlayer.vSpeed > -0.6) {
+if (not objPlayer.onGround and objPlayer.vSpeed < 0.6 and objPlayer.vSpeed > -0.6 and objPlayer.state == playerStateFree) {
 	sprite_index = sprPlayerJumpMid;
 }
 
 // Caminhar
-if (objPlayer.onGround and objPlayer.hSpeed != 0) {
+if (objPlayer.onGround and objPlayer.hSpeed != 0 and objPlayer.state == playerStateFree) {
 	sprite_index = sprPlayerRun;
 }
 
@@ -69,20 +69,29 @@ if (objPlayer.state == playerStateCrouch) {
 // Tomando dano
 if (objPlayer.state == playerStateDamage) {
 	sprite_index = sprPlayerDamage;
-	draw_set_alpha(damageTimer % 4);
 }
 
 // Ataque
 if (objPlayer.state == playerStateHit) {
 	sprite_index = sprPlayerAttack;
 	if (objPlayer.hitStage == 0) image_index = min(image_index, 4);
-	if (objPlayer.hitStage > 0) image_index = min(image_index, 6);
+	if (objPlayer.hitStage == 1) image_index = min(image_index, 6);
+	if (objPlayer.hitStage > 1) image_index = min(image_index, 11);
+}
+
+// Invul
+if (objPlayer.invulnerability > 0) {
+	if (damageTimer % 4 == 0) {
+		sprite_index = sprNothing;
+	}
 }
 
 // Animações acabáveis
 if (image_index > 3 and sprite_index == sprPlayerCrouching) image_speed = 0;
 if (image_index > 2 and sprite_index == sprPlayerDashing) image_speed = 0;
 if (image_index > 1 and sprite_index == sprPlayerJump) image_speed = 0;
+if (image_index > 8 and sprite_index == sprPlayerAttack) image_speed = 0;
+//if (sprite_index == sprPlayerAttack) image_speed = 1;
 
 // Resetar
 if (currentSprite != sprite_index) {

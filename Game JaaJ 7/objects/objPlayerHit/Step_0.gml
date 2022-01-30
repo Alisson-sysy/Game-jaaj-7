@@ -4,3 +4,7 @@
 		instance_destroy(self);
 	}
 }
+
+// Destruir com tempo
+if (destroyTime < 990) destroyTime = max(destroyTime - 1, 0);
+if (destroyTime < 1) instance_destroy(self);

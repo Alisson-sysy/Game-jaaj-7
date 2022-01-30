@@ -142,19 +142,22 @@ function playerStateDamage() {
 }
 
 function playerStateHit() {
+	vSpeed = 0;
+	hSpeed = facing * 0.4;
+	
 	switch (hitStage) {
 		case 0:
 			hitWait = max(hitWait - 1, 0);
 			
 			if (hitWait < 1) {
 				hitStage = 0;
-				hitWait = 40;
+				hitWait = hitWaitMax;
 				state = playerStateFree;
 			}
 			
-			if (hitWait > 1 and hitWait < 20 and objController.keyHit) {
+			if (hitWait > 1 and hitWait < 15 and objController.keyHit) {
 				hitStage++;
-				hitWait = 40;
+				hitWait = hitWaitMax;
 			}
 			break;
 			
@@ -163,13 +166,13 @@ function playerStateHit() {
 			
 			if (hitWait < 1) {
 				hitStage = 0;
-				hitWait = 40;
+				hitWait = hitWaitMax;
 				state = playerStateFree;
 			}
 			
-			if (hitWait > 1 and hitWait < 20 and objController.keyHit) {
+			if (hitWait > 1 and hitWait < 15 and objController.keyHit) {
 				hitStage++;
-				hitWait = 40;
+				hitWait = hitWaitMax;
 			}
 			break;
 		case 2:
@@ -177,11 +180,14 @@ function playerStateHit() {
 			
 			if (hitWait < 1) {
 				hitStage = 0;
-				hitWait = 40;
+				hitWait = hitWaitMax;
 				state = playerStateFree;
 			}
 			break;
 	}
+	
+	x += hSpeed;
+	y += vSpeed;
 }
 
 function applyCollision() {
