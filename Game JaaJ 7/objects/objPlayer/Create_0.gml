@@ -29,6 +29,7 @@ wallJumpDelay = 0;
 wallJumpFacing = 0;
 
 // Combate
+totalLife = 100;
 maxLife = 100;
 life = 100;
 semiLife = 100;

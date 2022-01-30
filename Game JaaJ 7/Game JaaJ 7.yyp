@@ -41,6 +41,7 @@
     {"id":{"name":"sprPlayerAttack","path":"sprites/sprPlayerAttack/sprPlayerAttack.yy",},"order":1,},
     {"id":{"name":"sprPlayerRun","path":"sprites/sprPlayerRun/sprPlayerRun.yy",},"order":6,},
     {"id":{"name":"objBossLifeBar","path":"objects/objBossLifeBar/objBossLifeBar.yy",},"order":6,},
+    {"id":{"name":"objLifeBarPlayer","path":"objects/objLifeBarPlayer/objLifeBarPlayer.yy",},"order":2,},
     {"id":{"name":"sndSwordSoundThree","path":"sounds/sndSwordSoundThree/sndSwordSoundThree.yy",},"order":2,},
     {"id":{"name":"sprPlayerCrouch","path":"sprites/sprPlayerCrouch/sprPlayerCrouch.yy",},"order":3,},
     {"id":{"name":"sndSwordSoundOne","path":"sounds/sndSwordSoundOne/sndSwordSoundOne.yy",},"order":0,},
