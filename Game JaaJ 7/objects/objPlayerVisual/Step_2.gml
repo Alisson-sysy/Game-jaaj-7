@@ -1,3 +1,8 @@
+// Timer
+damageTimer++;
+
+draw_set_alpha(1);
+
 // Acompanhar
 x = objPlayer.x;
 y = objPlayer.bbox_bottom + 1;
@@ -32,6 +37,10 @@ if (not objPlayer.onGround and objPlayer.vSpeed > 0) {
 	sprite_index = sprPlayerFall;
 }
 
+if (not objPlayer.onGround and objPlayer.vSpeed < 0.6 and objPlayer.vSpeed > -0.6) {
+	sprite_index = sprPlayerJumpMid;
+}
+
 // Caminhar
 if (objPlayer.onGround and objPlayer.hSpeed != 0) {
 	sprite_index = sprPlayerRun;
@@ -55,6 +64,19 @@ if (objPlayer.state == playerStateDash) {
 // Crouch
 if (objPlayer.state == playerStateCrouch) {
 	sprite_index = sprPlayerCrouching;
+}
+
+// Tomando dano
+if (objPlayer.state == playerStateDamage) {
+	sprite_index = sprPlayerDamage;
+	draw_set_alpha(damageTimer % 4);
+}
+
+// Ataque
+if (objPlayer.state == playerStateHit) {
+	sprite_index = sprPlayerAttack;
+	if (objPlayer.hitStage == 0) image_index = min(image_index, 4);
+	if (objPlayer.hitStage > 0) image_index = min(image_index, 6);
 }
 
 // Animações acabáveis

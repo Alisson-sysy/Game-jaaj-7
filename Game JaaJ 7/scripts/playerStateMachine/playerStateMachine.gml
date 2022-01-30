@@ -15,6 +15,7 @@
 		audio_sound_pitch(objSounds.swordSound[soundRandom], 20)
 		audio_play_sound(objSounds.swordSound[soundRandom], 10, false)
 		audio_sound_pitch(objSounds.swordSound[soundRandom], 1)
+		state = playerStateHit;
 	}
 	 
 	// Agachar
@@ -121,6 +122,65 @@ function playerStateDash() {
 		sprite_index = sprPlayer;
 		state = playerStateFree;
 		dashCooldown = 1;
+	}
+}
+
+function playerStateDamage() {
+	vSpeed = 0;
+	hSpeed = -facing * 1;
+	
+	recoil = max(recoil - 1, 0);
+	
+	if (recoil < 1) {
+		recoil = 30;
+		state = playerStateFree;
+		hSpeed = 0;
+	}
+	
+	x += hSpeed;
+	y += vSpeed;
+}
+
+function playerStateHit() {
+	switch (hitStage) {
+		case 0:
+			hitWait = max(hitWait - 1, 0);
+			
+			if (hitWait < 1) {
+				hitStage = 0;
+				hitWait = 40;
+				state = playerStateFree;
+			}
+			
+			if (hitWait > 1 and hitWait < 20 and objController.keyHit) {
+				hitStage++;
+				hitWait = 40;
+			}
+			break;
+			
+		case 1:
+			hitWait = max(hitWait - 1, 0);
+			
+			if (hitWait < 1) {
+				hitStage = 0;
+				hitWait = 40;
+				state = playerStateFree;
+			}
+			
+			if (hitWait > 1 and hitWait < 20 and objController.keyHit) {
+				hitStage++;
+				hitWait = 40;
+			}
+			break;
+		case 2:
+			hitWait = max(hitWait - 1, 0);
+			
+			if (hitWait < 1) {
+				hitStage = 0;
+				hitWait = 40;
+				state = playerStateFree;
+			}
+			break;
 	}
 }
 

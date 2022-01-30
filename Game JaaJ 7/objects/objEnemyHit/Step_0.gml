@@ -22,6 +22,7 @@ if (destroyTime < 1) instance_destroy(self);
 // Dar dano no player
 if (place_meeting(x, y, objPlayer)) {
 	objPlayer.life -= 20;
+	objPlayer.state = playerStateDamage;
 	if (not isPersistent) {
 		instance_destroy(self);
 	}

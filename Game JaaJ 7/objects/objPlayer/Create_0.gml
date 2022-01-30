@@ -33,4 +33,10 @@ maxLife = 100;
 life = 100;
 semiLife = 100;
 
+// Recoil Damage
+recoil = 30;
+
+// Hit / Combo
 damage = 20;
+hitStage = 0;
+hitWait = 40;
