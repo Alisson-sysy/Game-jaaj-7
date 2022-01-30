@@ -211,6 +211,10 @@ function playerStateHit() {
 	y += vSpeed;
 }
 
+function playerStateDeath() {
+	objGame.gameState = "d";
+}
+
 function applyCollision() {
 	var tilemap = layer_tilemap_get_id(layer_get_id("Collision"));
 	var bbox_v;

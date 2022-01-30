@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"objLifeBar","path":"objects/objLifeBar/objLifeBar.yy",},"order":1,},
     {"id":{"name":"objHermesSword","path":"objects/objHermesSword/objHermesSword.yy",},"order":7,},
+    {"id":{"name":"objDeath","path":"objects/objDeath/objDeath.yy",},"order":3,},
     {"id":{"name":"objPlayerVisual","path":"objects/objPlayerVisual/objPlayerVisual.yy",},"order":13,},
     {"id":{"name":"sprPlayerDashing","path":"sprites/sprPlayerDashing/sprPlayerDashing.yy",},"order":3,},
     {"id":{"name":"sprPlayerIdle","path":"sprites/sprPlayerIdle/sprPlayerIdle.yy",},"order":0,},
@@ -74,6 +75,7 @@
     {"id":{"name":"objEnemyHit","path":"objects/objEnemyHit/objEnemyHit.yy",},"order":3,},
     {"id":{"name":"sndSwordSoundTwo","path":"sounds/sndSwordSoundTwo/sndSwordSoundTwo.yy",},"order":1,},
     {"id":{"name":"sprHermesPoint","path":"sprites/sprHermesPoint/sprHermesPoint.yy",},"order":1,},
+    {"id":{"name":"sprDeathScreen","path":"sprites/sprDeathScreen/sprDeathScreen.yy",},"order":3,},
     {"id":{"name":"sprPlayerHit","path":"sprites/sprPlayerHit/sprPlayerHit.yy",},"order":7,},
     {"id":{"name":"sprPlayerWall","path":"sprites/sprPlayerWall/sprPlayerWall.yy",},"order":7,},
     {"id":{"name":"sprWarningArrow","path":"sprites/sprWarningArrow/sprWarningArrow.yy",},"order":5,},

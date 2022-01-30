@@ -1,8 +1,8 @@
 fullLife = 128
 fastLife = 128
 slowLife = 125
-colorLife = make_color_rgb(238, 20, 91);
-colorSlowLife = make_color_rgb(218, 134, 62);
+colorLife = make_color_rgb(115, 190, 211);
+colorSlowLife = make_color_rgb(79, 143, 186);
 colorLifeBg = make_color_rgb(9, 10, 20);
 speedSlowLife = 0.5
 
