@@ -1,4 +1,4 @@
-room_goto(warRoom)
+room_goto(warRoom);
 
 randomize();
 

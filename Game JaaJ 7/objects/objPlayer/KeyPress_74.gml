@@ -1,1 +1,0 @@
-objLifeBarPlayer.fastLife -= 20

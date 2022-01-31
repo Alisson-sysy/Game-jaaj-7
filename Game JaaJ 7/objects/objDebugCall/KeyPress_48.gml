@@ -1,1 +1,0 @@
-ScreenShake(55, 50)
