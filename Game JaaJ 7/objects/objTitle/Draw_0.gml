@@ -1,6 +1,6 @@
 timer++;
 
-if (active) {
+if (active and objPlayer.state != playerStateDeath) {
 	switch (eventMoment) {
 		case 0:
 			draw_set_alpha(.7);

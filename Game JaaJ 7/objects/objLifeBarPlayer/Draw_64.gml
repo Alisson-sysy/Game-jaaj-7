@@ -1,4 +1,4 @@
-if (objTitle.eventMoment == 3) {
+if (objTitle.eventMoment == 3 and objPlayer.state != playerStateDeath) {
 	draw_set_alpha(1);
 	
 	draw_set_color(colorLifeBg);

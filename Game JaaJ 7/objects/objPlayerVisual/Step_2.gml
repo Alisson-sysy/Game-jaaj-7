@@ -1,12 +1,12 @@
+// Acompanhar
+	x = objPlayer.x;
+	y = objPlayer.bbox_bottom + 1;
+	
 if (objGame.gameState == "g") {
 	// Timer
 	damageTimer++;
 
 	draw_set_alpha(1);
-
-	// Acompanhar
-	x = objPlayer.x;
-	y = objPlayer.bbox_bottom + 1;
 
 	// Unstretch
 	if (image_xscale != 1 and image_xscale != -1) {
